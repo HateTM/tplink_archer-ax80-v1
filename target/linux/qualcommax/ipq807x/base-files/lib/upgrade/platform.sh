@@ -220,11 +220,15 @@ platform_do_upgrade() {
 		;;
 	linksys,mx4200v1|\
 	linksys,mx4200v2|\
+<<<<<<< HEAD
 	linksys,mx4300)
 		linksys_mx_pre_upgrade "$1"
 		remove_oem_ubi_volume squashfs
 		nand_do_upgrade "$1"
 		;;
+=======
+	linksys,mx4300|\
+>>>>>>> 4c9cae1906 (qualcommax: ipq807x: add support for Linksys MX4300 (LN1301))
 	linksys,mx5300|\
 	linksys,mx8500)
 		linksys_mx_pre_upgrade "$1"
