@@ -139,12 +139,16 @@ case "$board" in
 		[ "$PHYNBR" = "1" ] && macaddr_add $addr 2 > /sys${DEVPATH}/macaddress
 		;;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 9fea587fa0 (mediatek: update openembed som7981 support)
 	nradio,c8-668gl)
 		hw_mac_addr=$(mmc_get_mac_ascii bdinfo "fac_mac ")
 		[ "$PHYNBR" = "0" ] && echo "$hw_mac_addr" > /sys${DEVPATH}/macaddress
 		[ "$PHYNBR" = "1" ] && macaddr_setbit_la $hw_mac_addr > /sys${DEVPATH}/macaddress
 		;;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	openembed,som7981)
 		[ "$PHYNBR" = "1" ] && cat /sys/class/net/eth0/address > /sys${DEVPATH}/macaddress
@@ -152,6 +156,10 @@ case "$board" in
 >>>>>>> 6b32a5d768 (mediatek: filogic: add support for NRadio C8-668GL)
 =======
 >>>>>>> 5a7fb834c7 (mediatek: update openembed som7981 support)
+=======
+=======
+>>>>>>> d9bbed6507 (mediatek: update openembed som7981 support)
+>>>>>>> 9fea587fa0 (mediatek: update openembed som7981 support)
 	qihoo,360t7)
 		addr=$(mtd_get_mac_ascii factory lanMac)
 		[ "$PHYNBR" = "0" ] && macaddr_add $addr 2 > /sys${DEVPATH}/macaddress
