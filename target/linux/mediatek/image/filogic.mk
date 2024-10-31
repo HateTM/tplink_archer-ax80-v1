@@ -975,6 +975,7 @@ define Device/jdcloud_re-cp-03
 endef
 TARGET_DEVICES += jdcloud_re-cp-03
 
+<<<<<<< HEAD
 define Device/keenetic_kn-3811
   DEVICE_VENDOR := Keenetic
   DEVICE_MODEL := KN-3811
@@ -995,6 +996,8 @@ define Device/keenetic_kn-3811
 endef
 TARGET_DEVICES += keenetic_kn-3811
 
+=======
+>>>>>>> 5a4eb56a7b (mediatek/filogic: add Keenetic KN-3911 support)
 define Device/keenetic_kn-3911
   DEVICE_VENDOR := Keenetic
   DEVICE_MODEL := KN-3911
