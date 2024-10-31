@@ -1040,7 +1040,11 @@ endef
 TARGET_DEVICES += keenetic_kn-3811
 
 =======
+<<<<<<< HEAD
 >>>>>>> 5a4eb56a7b (mediatek/filogic: add Keenetic KN-3911 support)
+=======
+>>>>>>> 895531f5c5 (mediatek/filogic: add Keenetic KN-3911 support)
+>>>>>>> 0b7c6efa77 (mediatek/filogic: add Keenetic KN-3911 support)
 define Device/keenetic_kn-3911
   DEVICE_VENDOR := Keenetic
   DEVICE_MODEL := KN-3911

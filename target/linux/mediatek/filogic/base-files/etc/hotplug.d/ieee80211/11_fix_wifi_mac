@@ -116,7 +116,11 @@ case "$board" in
 <<<<<<< HEAD
 	keenetic,kn-3811|\
 =======
+<<<<<<< HEAD
 >>>>>>> 5a4eb56a7b (mediatek/filogic: add Keenetic KN-3911 support)
+=======
+>>>>>>> 895531f5c5 (mediatek/filogic: add Keenetic KN-3911 support)
+>>>>>>> 0b7c6efa77 (mediatek/filogic: add Keenetic KN-3911 support)
 	keenetic,kn-3911)
 		[ "$PHYNBR" = "1" ] && \
 			macaddr_setbit_la "$(mtd_get_mac_binary rf-eeprom 0x4)" > /sys${DEVPATH}/macaddress
