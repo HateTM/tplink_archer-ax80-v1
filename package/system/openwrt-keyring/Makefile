@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openwrt-keyring
-PKG_RELEASE:=2
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/keyring.git
@@ -42,9 +42,12 @@ define Package/openwrt-keyring/install
 =======
 	# Public usign key for unattended snapshot builds
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usign/b5043e70f9a75cde $(1)/etc/opkg/keys/
+<<<<<<< HEAD
 >>>>>>> 37784c48e9 (openwrt-keyring: fix missing 24.10 usign key by installing it)
 	# Public usign key for 24.10 release builds
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usign/d310c6f2833e97f7 $(1)/etc/opkg/keys/
+=======
+>>>>>>> 118c657bd1 (Revert "openwrt-keyring: fix missing 24.10 usign key by installing it")
 endef
 endif
 
