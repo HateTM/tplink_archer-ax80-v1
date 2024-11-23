@@ -43,10 +43,14 @@ define Package/base-files
 	+netifd +libc +jsonfilter +SIGNED_PACKAGES:usign +SIGNED_PACKAGES:openwrt-keyring \
 	+NAND_SUPPORT:ubi-utils +fstools +fwtool \
 <<<<<<< HEAD
+<<<<<<< HEAD
 	+SELINUX:procd-selinux +!SELINUX:procd +USE_SECCOMP:procd-seccomp \
 	+SELINUX:busybox-selinux +!SELINUX:busybox
 =======
 	+SELINUX:procd-selinux +!SELINUX:procd +SECCOMP:procd-seccomp \
+=======
+	+SELINUX:procd-selinux +!SELINUX:procd +USE_SECCOMP:procd-seccomp \
+>>>>>>> a48ec449cc (config: rename SECCOMP to USE_SECCOMP)
 	+SELINUX:busybox-selinux +!SELINUX:busybox +!SMALL_FLASH:procd-ujail
 >>>>>>> ac640718aa (target,base-files: unify handling of procd-ujail)
   TITLE:=Base filesystem for OpenWrt
