@@ -46,6 +46,7 @@ define Package/base-files
 <<<<<<< HEAD
 	+SELINUX:procd-selinux +!SELINUX:procd +USE_SECCOMP:procd-seccomp \
 	+SELINUX:busybox-selinux +!SELINUX:busybox
+<<<<<<< HEAD
 =======
 	+SELINUX:procd-selinux +!SELINUX:procd +SECCOMP:procd-seccomp \
 =======
@@ -53,6 +54,8 @@ define Package/base-files
 >>>>>>> a48ec449cc (config: rename SECCOMP to USE_SECCOMP)
 	+SELINUX:busybox-selinux +!SELINUX:busybox +!SMALL_FLASH:procd-ujail
 >>>>>>> ac640718aa (target,base-files: unify handling of procd-ujail)
+=======
+>>>>>>> 341cc047b9 (Revert "target,base-files: unify handling of procd-ujail")
   TITLE:=Base filesystem for OpenWrt
   URL:=http://openwrt.org/
   VERSION:=$(PKG_RELEASE)~$(lastword $(subst -, ,$(REVISION)))
