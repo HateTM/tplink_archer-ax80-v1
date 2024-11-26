@@ -72,6 +72,7 @@ menu "Global build settings"
 		imply PACKAGE_apk-mbedtls
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		bool "Use APK instead of OPKG to build distribution (BROKEN)"
 		depends on BROKEN
 =======
@@ -81,6 +82,10 @@ menu "Global build settings"
 >>>>>>> 620a7ef47f (config: build: remove experimental warning from USE_APK option)
 		default y
 >>>>>>> 40b8fbaa97 (config: Use APK as package manager by default)
+=======
+		bool "Use APK instead of OPKG to build distribution (BROKEN)"
+		depends on BROKEN
+>>>>>>> c577255b8a (config: Mark USE_APK broken)
 
 	comment "General build options"
 
