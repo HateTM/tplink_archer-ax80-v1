@@ -26,9 +26,13 @@ define Device/tplink_tdw8970
   TPLINK_HWID := 0x89700001
   TPLINK_HWREV := 1
   IMAGE_SIZE := 7680k
+<<<<<<< HEAD
   DEVICE_PACKAGES:= kmod-ath9k wpad-basic-mbedtls kmod-usb-dwc2 \
   	kmod-usb-ledtrig-usbport xrx200-rev1.1-phy11g-firmware \
 	xrx200-rev1.2-phy11g-firmware
+=======
+  DEVICE_PACKAGES:= kmod-ath9k wpad-basic-mbedtls kmod-usb-dwc2 kmod-usb-ledtrig-usbport
+>>>>>>> 5415fb06d2 (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
   SUPPORTED_DEVICES += TDW8970
 endef
 TARGET_DEVICES += tplink_tdw8970
@@ -46,14 +50,22 @@ define Device/tplink_tdw8980
   DEVICE_ALT1_MODEL := TD-W9980B
   DEVICE_ALT1_VARIANT := v1
 =======
+<<<<<<< HEAD
 >>>>>>> e63326e26a (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
+=======
+>>>>>>> 5415fb06d2 (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
+>>>>>>> e05105c1ef (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
   TPLINK_FLASHLAYOUT := 8Mltq
   TPLINK_HWID := 0x89800001
   TPLINK_HWREV := 14
   IMAGE_SIZE := 7680k
+<<<<<<< HEAD
   DEVICE_PACKAGES:= kmod-ath9k kmod-owl-loader wpad-basic-mbedtls \
 	kmod-usb-dwc2 kmod-usb-ledtrig-usbport xrx200-rev1.1-phy11g-firmware \
 	xrx200-rev1.2-phy11g-firmware
+=======
+  DEVICE_PACKAGES:= kmod-ath9k kmod-owl-loader wpad-basic-mbedtls kmod-usb-dwc2 kmod-usb-ledtrig-usbport
+>>>>>>> 5415fb06d2 (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
   SUPPORTED_DEVICES += TDW8980
 endef
 TARGET_DEVICES += tplink_tdw8980

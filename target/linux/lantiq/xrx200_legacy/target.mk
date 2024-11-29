@@ -13,7 +13,10 @@ DEFAULT_PACKAGES+=kmod-leds-gpio \
 	kmod-ltq-deu-vr9 \
 	kmod-ltq-ptm-vr9 \
 	ltq-vdsl-vr9-app \
+<<<<<<< HEAD
 	kmod-dsa-gswip \
+=======
+>>>>>>> 5415fb06d2 (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
 	dsl-vrx200-firmware-xdsl-a \
 	dsl-vrx200-firmware-xdsl-b-patch \
 	ppp-mod-pppoa
