@@ -36,12 +36,15 @@ define Device/tplink_tdw8980
   $(Device/lantiqTpLink)
   DEVICE_MODEL := TD-W8980
   DEVICE_VARIANT := v1
+<<<<<<< HEAD
   DEVICE_ALT0_VENDOR := TP-LINK
   DEVICE_ALT0_MODEL := TD-W9980
   DEVICE_ALT0_VARIANT := v1
   DEVICE_ALT1_VENDOR := TP-LINK
   DEVICE_ALT1_MODEL := TD-W9980B
   DEVICE_ALT1_VARIANT := v1
+=======
+>>>>>>> e63326e26a (lantiq/xrx200: move 8M flash devices to a small flash subtarget)
   TPLINK_FLASHLAYOUT := 8Mltq
   TPLINK_HWID := 0x89800001
   TPLINK_HWREV := 14
