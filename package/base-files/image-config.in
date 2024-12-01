@@ -190,7 +190,15 @@ if VERSIONOPT
 	config VERSION_REPO
 		string
 		prompt "Release repository"
+<<<<<<< HEAD
 		default "https://downloads.openwrt.org/releases/24.10-SNAPSHOT"
+=======
+<<<<<<< HEAD
+		default "https://downloads.openwrt.org/snapshots"
+=======
+		default "https://downloads.openwrt.org/releases/24.10.0-rc1"
+>>>>>>> 41714984df (OpenWrt v24.10.0-rc1: adjust config defaults)
+>>>>>>> 76ee3cc707 (OpenWrt v24.10.0-rc1: adjust config defaults)
 		help
 			This is the repository address embedded in the image, it defaults
 			to the trunk snapshot repo; the url may contain the following placeholders:
@@ -272,7 +280,7 @@ if VERSIONOPT
 	config VERSION_CODE_FILENAMES
 		bool
 		prompt "Revision code in filenames"
-		default y
+		default n
 		help
 			Enable this to include the revision identifier or the configured
 			version code into the firmware image, SDK- and Image Builder archive
