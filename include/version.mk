@@ -28,28 +28,46 @@ sanitize = $(call tolower,$(subst _,-,$(subst $(space),-,$(1))))
 
 VERSION_NUMBER:=$(call qstrip,$(CONFIG_VERSION_NUMBER))
 <<<<<<< HEAD
+<<<<<<< HEAD
 VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10-SNAPSHOT)
 =======
+=======
+>>>>>>> 95536fc880 (OpenWrt v24.10.0-rc1: revert to branch defaults)
 <<<<<<< HEAD
 VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),SNAPSHOT)
 =======
 VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10.0-rc1)
 >>>>>>> 41714984df (OpenWrt v24.10.0-rc1: adjust config defaults)
+<<<<<<< HEAD
 >>>>>>> 76ee3cc707 (OpenWrt v24.10.0-rc1: adjust config defaults)
+=======
+=======
+VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10-SNAPSHOT)
+>>>>>>> 5601274444 (OpenWrt v24.10.0-rc1: revert to branch defaults)
+>>>>>>> 95536fc880 (OpenWrt v24.10.0-rc1: revert to branch defaults)
 
 VERSION_CODE:=$(call qstrip,$(CONFIG_VERSION_CODE))
-VERSION_CODE:=$(if $(VERSION_CODE),$(VERSION_CODE),r28158-d276b4c91a)
+VERSION_CODE:=$(if $(VERSION_CODE),$(VERSION_CODE),$(REVISION))
 
 VERSION_REPO:=$(call qstrip,$(CONFIG_VERSION_REPO))
 <<<<<<< HEAD
+<<<<<<< HEAD
 VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/releases/24.10-SNAPSHOT)
 =======
+=======
+>>>>>>> 95536fc880 (OpenWrt v24.10.0-rc1: revert to branch defaults)
 <<<<<<< HEAD
 VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/snapshots)
 =======
 VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/releases/24.10.0-rc1)
 >>>>>>> 41714984df (OpenWrt v24.10.0-rc1: adjust config defaults)
+<<<<<<< HEAD
 >>>>>>> 76ee3cc707 (OpenWrt v24.10.0-rc1: adjust config defaults)
+=======
+=======
+VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/releases/24.10-SNAPSHOT)
+>>>>>>> 5601274444 (OpenWrt v24.10.0-rc1: revert to branch defaults)
+>>>>>>> 95536fc880 (OpenWrt v24.10.0-rc1: revert to branch defaults)
 
 VERSION_DIST:=$(call qstrip,$(CONFIG_VERSION_DIST))
 VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),OpenWrt)
