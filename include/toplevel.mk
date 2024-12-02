@@ -76,6 +76,7 @@ endif
 _ignore = $(foreach p,$(IGNORE_PACKAGES),--ignore $(p))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 prepare-tmpinfo: FORCE
 =======
 # Config that will invalidate the .targetinfo as they will affect
@@ -95,6 +96,9 @@ check-dynamic-def-pkg: FORCE
 
 prepare-tmpinfo: check-dynamic-def-pkg FORCE
 >>>>>>> a48ec449cc (config: rename SECCOMP to USE_SECCOMP)
+=======
+prepare-tmpinfo: FORCE
+>>>>>>> 3b661cfcf9 (build: remove targetinfo invalidation based on .config)
 	@+$(MAKE) -r -s $(STAGING_DIR_HOST)/.prereq-build $(PREP_MK)
 	mkdir -p tmp/info feeds
 	[ -e $(TOPDIR)/feeds/base ] || ln -sf $(TOPDIR)/package $(TOPDIR)/feeds/base
