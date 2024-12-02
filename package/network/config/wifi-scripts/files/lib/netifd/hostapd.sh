@@ -724,7 +724,11 @@ hostapd_set_bss_options() {
 				append bss_conf "wpa_psk=$key" "$N"
 			elif [ ${#key} -ge 8 ] && [ ${#key} -le 63 ]; then
 				append bss_conf "wpa_passphrase=$key" "$N"
+<<<<<<< HEAD
 			elif [ -n "$key" ]; then
+=======
+			elif [ -n "$key" ] || [ -z "$wpa_psk_file" ] || [ -z "$sae_password_file" ]; then
+>>>>>>> 65a1c666f2 (hostapd: add SAE support for wifi-station and optimize PSK file creation)
 				wireless_setup_vif_failed INVALID_WPA_PSK
 				return 1
 			fi
