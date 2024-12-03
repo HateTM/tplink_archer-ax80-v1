@@ -2,12 +2,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 95536fc880 (OpenWrt v24.10.0-rc1: revert to branch defaults)
+=======
+>>>>>>> 8045ba485f (OpenWrt v24.10.0-rc2: revert to branch defaults)
 src-git packages https://git.openwrt.org/feed/packages.git;openwrt-24.10
 src-git luci https://git.openwrt.org/project/luci.git;openwrt-24.10
 src-git routing https://git.openwrt.org/feed/routing.git;openwrt-24.10
 src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-24.10
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 src-git packages https://git.openwrt.org/feed/packages.git
@@ -33,3 +37,5 @@ src-git luci https://git.openwrt.org/project/luci.git^e76155d09484602e2b02e84bb8
 src-git routing https://git.openwrt.org/feed/routing.git^3f15699240c076d5ee9ed697fa5ef45355423f6f
 src-git telephony https://git.openwrt.org/feed/telephony.git^fd605af7143165a2490681ec1752f259873b9147
 >>>>>>> e7b5609801 (OpenWrt v24.10.0-rc2: adjust config defaults)
+=======
+>>>>>>> 8045ba485f (OpenWrt v24.10.0-rc2: revert to branch defaults)
