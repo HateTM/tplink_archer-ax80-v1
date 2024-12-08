@@ -368,9 +368,13 @@ define Device/zyxel_p-2812hnu-f1
   DEVICE_MODEL := P-2812HNU
   DEVICE_VARIANT := F1
   BOARD_NAME := P2812HNUF1
+<<<<<<< HEAD
   DEVICE_PACKAGES := kmod-rt2800-pci wpad-basic-mbedtls kmod-usb-dwc2 \
 	kmod-usb-ledtrig-usbport xrx200-rev1.1-phy11g-firmware \
 	xrx200-rev1.2-phy11g-firmware
+=======
+  DEVICE_PACKAGES := kmod-rt2800-pci wpad-basic-mbedtls kmod-usb-dwc2 kmod-usb-ledtrig-usbport
+>>>>>>> 9f76cda378 (lantiq: grow kernel partition Zyxel P-2812HNU-F1)
   KERNEL_SIZE := 5120k
   SUPPORTED_DEVICES += P2812HNUF1
 endef
