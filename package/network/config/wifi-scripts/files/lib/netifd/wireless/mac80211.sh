@@ -31,9 +31,13 @@ drv_mac80211_init_device_config() {
 	config_add_string distance
 	config_add_string ifname_prefix
 <<<<<<< HEAD
+<<<<<<< HEAD
 	config_add_string macaddr_base
 =======
 >>>>>>> a9ff3ba24b (wifi-scripts: add option to set per-device ifname prefix)
+=======
+	config_add_string macaddr_base
+>>>>>>> 00860e485b (wifi-scripts: add macaddr_base wifi-device option)
 	config_add_int radio beacon_int chanbw frag rts
 	config_add_int rxantenna txantenna txpower min_tx_power
 	config_add_int num_global_macaddr multiple_bssid
@@ -1131,10 +1135,14 @@ drv_mac80211_setup() {
 		frag rts beacon_int:100 htmode \
 		num_global_macaddr:1 multiple_bssid \
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ifname_prefix macaddr_base
 =======
 		ifname_prefix
 >>>>>>> a9ff3ba24b (wifi-scripts: add option to set per-device ifname prefix)
+=======
+		ifname_prefix macaddr_base
+>>>>>>> 00860e485b (wifi-scripts: add macaddr_base wifi-device option)
 	json_get_values basic_rate_list basic_rate
 	json_get_values scan_list scan_list
 	json_select ..

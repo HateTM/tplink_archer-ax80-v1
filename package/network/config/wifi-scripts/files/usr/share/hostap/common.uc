@@ -213,12 +213,18 @@ const phy_proto = {
 		if (!base_mask)
 			return null;
 
+<<<<<<< HEAD
 		if (base_mask == "00:00:00:00:00:00")
 			base_mask = "ff:ff:ff:ff:ff:ff";
 
 		if (data.macaddr_base)
 			base_addr = data.macaddr_base;
 		else if (base_mask == "ff:ff:ff:ff:ff:ff" &&
+=======
+		if (data.macaddr_base)
+			base_addr = data.macaddr_base;
+		else if (base_mask == "00:00:00:00:00:00" &&
+>>>>>>> 00860e485b (wifi-scripts: add macaddr_base wifi-device option)
 		    (radio_idx > 0 || idx >= num_global)) {
 			let addrs = split(phy_sysfs_file(phy, "addresses"), "\n");
 
