@@ -33,6 +33,7 @@ drv_mac80211_init_device_config() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	config_add_string macaddr_base
 =======
 >>>>>>> a9ff3ba24b (wifi-scripts: add option to set per-device ifname prefix)
@@ -44,6 +45,14 @@ drv_mac80211_init_device_config() {
 =======
 >>>>>>> 06340650c5 (wifi-scripts: add option to set per-device ifname prefix)
 >>>>>>> 6a7401d387 (wifi-scripts: add option to set per-device ifname prefix)
+=======
+	config_add_string macaddr_base
+=======
+>>>>>>> 06340650c5 (wifi-scripts: add option to set per-device ifname prefix)
+=======
+	config_add_string macaddr_base
+>>>>>>> ea80aa938f (wifi-scripts: add macaddr_base wifi-device option)
+>>>>>>> 8705fb5b03 (wifi-scripts: add macaddr_base wifi-device option)
 	config_add_int radio beacon_int chanbw frag rts
 	config_add_int rxantenna txantenna txpower min_tx_power
 	config_add_int num_global_macaddr multiple_bssid
@@ -1143,6 +1152,7 @@ drv_mac80211_setup() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ifname_prefix macaddr_base
 =======
 		ifname_prefix
@@ -1151,11 +1161,19 @@ drv_mac80211_setup() {
 		ifname_prefix macaddr_base
 >>>>>>> 00860e485b (wifi-scripts: add macaddr_base wifi-device option)
 =======
+=======
+>>>>>>> 8705fb5b03 (wifi-scripts: add macaddr_base wifi-device option)
 		ifname_prefix macaddr_base
 =======
 		ifname_prefix
 >>>>>>> 06340650c5 (wifi-scripts: add option to set per-device ifname prefix)
+<<<<<<< HEAD
 >>>>>>> 6a7401d387 (wifi-scripts: add option to set per-device ifname prefix)
+=======
+=======
+		ifname_prefix macaddr_base
+>>>>>>> ea80aa938f (wifi-scripts: add macaddr_base wifi-device option)
+>>>>>>> 8705fb5b03 (wifi-scripts: add macaddr_base wifi-device option)
 	json_get_values basic_rate_list basic_rate
 	json_get_values scan_list scan_list
 	json_select ..
