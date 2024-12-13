@@ -20,7 +20,11 @@
 <<<<<<< HEAD
 		label-mac-device = &gmac0;
 =======
+<<<<<<< HEAD
 >>>>>>> b3ce08e0b6 (mediatek: filogic: Add support for D-Link AQUILA PRO AI M60)
+=======
+>>>>>>> 7271ee587c (mediatek: filogic: Add support for D-Link AQUILA PRO AI M60)
+>>>>>>> 17b088f705 (mediatek: filogic: Add support for D-Link AQUILA PRO AI M60)
 	};
 
 	chosen {
@@ -90,8 +94,14 @@
 		reset-post-delay-us = <1000000>;
 
 		phy6: phy@6 {
+<<<<<<< HEAD
 			compatible = "ethernet-phy-ieee802.3-c45";
 			reg = <6>;
+=======
+			compatible = "maxlinear,gpy211", "ethernet-phy-ieee802.3-c45";
+			reg = <6>;
+			phy-mode = "2500base-x";
+>>>>>>> 7271ee587c (mediatek: filogic: Add support for D-Link AQUILA PRO AI M60)
 		};
 
 		switch@1f {
