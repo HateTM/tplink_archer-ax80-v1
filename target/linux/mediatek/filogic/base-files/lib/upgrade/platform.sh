@@ -126,7 +126,10 @@ platform_do_upgrade() {
 	yuncore,ax835)
 		default_do_upgrade "$1"
 		;;
+<<<<<<< HEAD
 	dlink,aquila-pro-ai-m30-a1|\
+=======
+>>>>>>> b3ce08e0b6 (mediatek: filogic: Add support for D-Link AQUILA PRO AI M60)
 	dlink,aquila-pro-ai-m60-a1)
 		fw_setenv sw_tryactive 0
 		nand_do_upgrade "$1"

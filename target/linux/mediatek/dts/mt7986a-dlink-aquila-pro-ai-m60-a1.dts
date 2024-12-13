@@ -17,7 +17,10 @@
 		led-failsafe = &led_status_red;
 		led-running = &led_status_white;
 		led-upgrade = &led_status_blue;
+<<<<<<< HEAD
 		label-mac-device = &gmac0;
+=======
+>>>>>>> b3ce08e0b6 (mediatek: filogic: Add support for D-Link AQUILA PRO AI M60)
 	};
 
 	chosen {
