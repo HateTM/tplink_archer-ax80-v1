@@ -11,7 +11,10 @@ hostapd.data.file_fields = {
 	vlan_file: true,
 	wpa_psk_file: true,
 	sae_password_file: true,
+<<<<<<< HEAD
 	rxkh_file: true,
+=======
+>>>>>>> 4cc1da1e44 (hostapd: add SAE support for wifi-station and optimize PSK file creation)
 	accept_mac_file: true,
 	deny_mac_file: true,
 	eap_user_file: true,
