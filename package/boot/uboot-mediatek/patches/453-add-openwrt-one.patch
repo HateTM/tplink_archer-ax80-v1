@@ -513,8 +513,13 @@
 +_switch_to_menu=setenv _switch_to_menu ; setenv bootdelay 3 ; setenv bootmenu_delay 3 ; setenv bootmenu_0 $bootmenu_0d ; setenv bootmenu_0d ; run _bootmenu_update_title
 +_bootmenu_update_title=setenv _bootmenu_update_title ; setenv bootmenu_title "$bootmenu_title       [33m$ver[0m"
 --- /dev/null
+<<<<<<< HEAD
 +++ b/defenvs/openwrt-one-spi-nand_env
 @@ -0,0 +1,62 @@
+=======
++++ b/openwrt-one-spi-nand_env
+@@ -0,0 +1,61 @@
+>>>>>>> b0261c3861 (uboot-mediatek: add missing LED command for OpenWrt One)
 +ethaddr_factory=mtd read factory 0x46000000 0x0 0x20000 && env readmem -b ethaddr 0x4600002a 0x6 ; setenv ethaddr_factory
 +ipaddr=192.168.11.11
 +serverip=192.168.11.23
