@@ -436,11 +436,15 @@ menu "Global build settings"
 		bool "Enable SECCOMP"
 		select KERNEL_SECCOMP
 <<<<<<< HEAD
+<<<<<<< HEAD
 		select PACKAGE_procd-seccomp
 		depends on (aarch64 || arm || armeb || mips || mipsel || mips64 || mips64el || i386 || loongarch64 || powerpc || x86_64)
 =======
 		depends on (aarch64 || arm || armeb || mips || mipsel || mips64 || mips64el || i386 || powerpc || x86_64)
 >>>>>>> a4bd42b790 (config: dont select procd-seccomp via USE_SECCOMP)
+=======
+		depends on (aarch64 || arm || armeb || mips || mipsel || mips64 || mips64el || i386 || loongarch64 || powerpc || x86_64)
+>>>>>>> b6b6148d7d (config: enable SECCOMP support for loongarch64)
 		depends on !TARGET_uml
 		default y
 		help
