@@ -264,11 +264,14 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&mdio_aux_mdx>, <&aux_mode_mdio>;
 		};
+<<<<<<< HEAD
 
 		soc_thermal: thermal {
 			compatible = "realtek,rtl8380-thermal";
 			#thermal-sensor-cells = <0>;
 		};
+=======
+>>>>>>> 01bc33a913 (realtek: rtl838x: Instantiate auxiliary MDIO bus)
 	};
 
 	pinmux@1b000144 {
