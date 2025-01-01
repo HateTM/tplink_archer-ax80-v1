@@ -20,7 +20,6 @@
 
 	keys {
 		compatible = "gpio-keys-polled";
-		debounce-interval = <100>;
 		poll-interval = <20>;
 
 		reset {
