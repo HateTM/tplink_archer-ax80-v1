@@ -1409,7 +1409,11 @@ define Device/genexis_pulse-ex400/common
 	inteno-bootfs | inteno-y3-header EX400 | append-md5sum-ascii-salted
 =======
 	inteno-bootfs | inteno-y3-header | append-md5sum-ascii-salted
+<<<<<<< HEAD
 >>>>>>> 3e7337feea (ramips: Add support for Genexis / Inteno Pulse EX400)
+=======
+>>>>>>> dd0c2839a8 (ramips: Add support for Genexis / Inteno Pulse EX400)
+>>>>>>> 03f5ae9bdb (ramips: Add support for Genexis / Inteno Pulse EX400)
   IMAGE/sysupgrade.bin := append-kernel | inteno-bootfs | \
     sysupgrade-tar kernel=$$$$@ | check-size | append-metadata
   DEVICE_IMG_NAME = $$(DEVICE_IMG_PREFIX)-$$(2)

@@ -17,8 +17,20 @@
 . /lib/upgrade/nand.sh
 
 inteno_do_upgrade () {
+<<<<<<< HEAD
 	# get the size of the new bootfs
 	local _bootfs_size=$(tar -tvf $1 | grep kernel | awk '{print $3}')
+=======
+	local tar_file=$1
+	local cmd=cat
+	# WARNING: This fails if tar contains more than one 'sysupgrade-*' directory.
+	local board_dir="$(tar tf "$tar_file" | grep -m 1 '^sysupgrade-.*/$')"
+	board_dir="${board_dir%/}"
+	tar -xaf "$tar_file"
+
+	# get the size of the new bootfs
+	local _bootfs_size=$(wc -c < "$board_dir/kernel")
+>>>>>>> dd0c2839a8 (ramips: Add support for Genexis / Inteno Pulse EX400)
 	[ -n "$_bootfs_size" -a "$_bootfs_size" -gt "0" ] || nand_do_upgrade_failed
 
 	# remove existing rootfses and recreate rootfs_0
@@ -28,6 +40,13 @@ inteno_do_upgrade () {
 	ubirmvol /dev/ubi0 --name=rootfs_data > /dev/null 2>&1
 	ubimkvol /dev/ubi0 --type=static --size=${_bootfs_size} --name=rootfs_0
 
+<<<<<<< HEAD
+=======
+	# update the rootfs_0 contents
+	local _kern_ubivol=$( nand_find_volume "ubi0" "rootfs_0" )
+	ubiupdatevol "/dev/$_kern_ubivol" "$board_dir/kernel"
+
+>>>>>>> dd0c2839a8 (ramips: Add support for Genexis / Inteno Pulse EX400)
 	fw_setenv root_vol rootfs_0
 	fw_setenv boot_cnt_primary 0
 	fw_setenv boot_cnt_alt 0
