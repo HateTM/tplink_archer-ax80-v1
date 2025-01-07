@@ -1405,7 +1405,11 @@ define Device/genexis_pulse-ex400/common
   KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | uImage lzma
   IMAGES += factory.bin
   IMAGE/factory.bin := append-image-stage initramfs-kernel.bin | \
+<<<<<<< HEAD
 	inteno-bootfs | inteno-y3-header EX400 | append-md5sum-ascii-salted
+=======
+	inteno-bootfs | inteno-y3-header | append-md5sum-ascii-salted
+>>>>>>> 3e7337feea (ramips: Add support for Genexis / Inteno Pulse EX400)
   IMAGE/sysupgrade.bin := append-kernel | inteno-bootfs | \
     sysupgrade-tar kernel=$$$$@ | check-size | append-metadata
   DEVICE_IMG_NAME = $$(DEVICE_IMG_PREFIX)-$$(2)
