@@ -65,7 +65,11 @@ Signed-off-by: Jonathan Bell <jonathan@raspberrypi.com>
 @@ -1119,6 +1121,8 @@ struct dwc3_scratchpad_array {
 =======
 @@ -1123,6 +1125,8 @@ struct dwc3_scratchpad_array {
+<<<<<<< HEAD
 >>>>>>> 1d021458fd (kernel: bump 6.6 to 6.6.72)
+=======
+>>>>>>> 4081bc3f6c (kernel: bump 6.6 to 6.6.72)
+>>>>>>> 98ba47bb18 (kernel: bump 6.6 to 6.6.72)
   *			generation after resume from suspend.
   * @ulpi_ext_vbus_drv: Set to confiure the upli chip to drives CPEN pin
   *			VBUS with an external supply.
@@ -78,7 +82,11 @@ Signed-off-by: Jonathan Bell <jonathan@raspberrypi.com>
 @@ -1348,6 +1352,8 @@ struct dwc3 {
 =======
 @@ -1353,6 +1357,8 @@ struct dwc3 {
+<<<<<<< HEAD
 >>>>>>> 1d021458fd (kernel: bump 6.6 to 6.6.72)
+=======
+>>>>>>> 4081bc3f6c (kernel: bump 6.6 to 6.6.72)
+>>>>>>> 98ba47bb18 (kernel: bump 6.6 to 6.6.72)
  	unsigned		dis_tx_ipgap_linecheck_quirk:1;
  	unsigned		resume_hs_terminations:1;
  	unsigned		ulpi_ext_vbus_drv:1;
