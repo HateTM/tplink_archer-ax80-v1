@@ -37,6 +37,7 @@ VERSION_NUMBER:=$(call qstrip,$(CONFIG_VERSION_NUMBER))
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10-SNAPSHOT)
 =======
 =======
@@ -57,6 +58,8 @@ VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10-SNAPSHOT)
 >>>>>>> 964a5b3f4d (OpenWrt v24.10.0-rc5: adjust config defaults)
 =======
 >>>>>>> de4009bbb9 (OpenWrt v24.10.0-rc5: revert to branch defaults)
+=======
+>>>>>>> bc46a3d7e7 (OpenWrt v24.10.0-rc6: adjust config defaults)
 <<<<<<< HEAD
 VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),SNAPSHOT)
 =======
@@ -116,12 +119,19 @@ VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10.0-rc5)
 =======
 VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10-SNAPSHOT)
 >>>>>>> 50dcebeb8a (OpenWrt v24.10.0-rc5: revert to branch defaults)
+<<<<<<< HEAD
 >>>>>>> de4009bbb9 (OpenWrt v24.10.0-rc5: revert to branch defaults)
+=======
+=======
+VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10.0-rc6)
+>>>>>>> 8c660861ef (OpenWrt v24.10.0-rc6: adjust config defaults)
+>>>>>>> bc46a3d7e7 (OpenWrt v24.10.0-rc6: adjust config defaults)
 
 VERSION_CODE:=$(call qstrip,$(CONFIG_VERSION_CODE))
-VERSION_CODE:=$(if $(VERSION_CODE),$(VERSION_CODE),$(REVISION))
+VERSION_CODE:=$(if $(VERSION_CODE),$(VERSION_CODE),r28388-58d0057481)
 
 VERSION_REPO:=$(call qstrip,$(CONFIG_VERSION_REPO))
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -152,6 +162,8 @@ VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org
 >>>>>>> 964a5b3f4d (OpenWrt v24.10.0-rc5: adjust config defaults)
 =======
 >>>>>>> de4009bbb9 (OpenWrt v24.10.0-rc5: revert to branch defaults)
+=======
+>>>>>>> bc46a3d7e7 (OpenWrt v24.10.0-rc6: adjust config defaults)
 <<<<<<< HEAD
 VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/snapshots)
 =======
@@ -211,7 +223,13 @@ VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org
 =======
 VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/releases/24.10-SNAPSHOT)
 >>>>>>> 50dcebeb8a (OpenWrt v24.10.0-rc5: revert to branch defaults)
+<<<<<<< HEAD
 >>>>>>> de4009bbb9 (OpenWrt v24.10.0-rc5: revert to branch defaults)
+=======
+=======
+VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://downloads.openwrt.org/releases/24.10.0-rc6)
+>>>>>>> 8c660861ef (OpenWrt v24.10.0-rc6: adjust config defaults)
+>>>>>>> bc46a3d7e7 (OpenWrt v24.10.0-rc6: adjust config defaults)
 
 VERSION_DIST:=$(call qstrip,$(CONFIG_VERSION_DIST))
 VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),OpenWrt)
