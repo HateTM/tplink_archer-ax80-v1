@@ -67,7 +67,11 @@ Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
  }
  
  /*
+<<<<<<< HEAD
 @@ -2822,7 +2835,6 @@ serial8250_do_set_termios(struct uart_po
+=======
+@@ -2814,7 +2827,6 @@ serial8250_do_set_termios(struct uart_po
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
  		if (termios->c_cflag & CRTSCTS)
  			up->mcr |= UART_MCR_AFE;
  	}

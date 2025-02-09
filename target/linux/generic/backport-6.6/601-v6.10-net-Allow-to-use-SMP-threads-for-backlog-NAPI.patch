@@ -250,7 +250,11 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  	return 0;
  }
  
+<<<<<<< HEAD
 @@ -11334,7 +11375,7 @@ static int dev_cpu_dead(unsigned int old
+=======
+@@ -11303,7 +11344,7 @@ static int dev_cpu_dead(unsigned int old
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
  
  		list_del_init(&napi->poll_list);
  		if (napi->poll == process_backlog)
@@ -259,7 +263,11 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  		else
  			____napi_schedule(sd, napi);
  	}
+<<<<<<< HEAD
 @@ -11342,12 +11383,14 @@ static int dev_cpu_dead(unsigned int old
+=======
+@@ -11311,12 +11352,14 @@ static int dev_cpu_dead(unsigned int old
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
  	raise_softirq_irqoff(NET_TX_SOFTIRQ);
  	local_irq_enable();
  
@@ -278,7 +286,11 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  
  	/* Process offline CPU's input_pkt_queue */
  	while ((skb = __skb_dequeue(&oldsd->process_queue))) {
+<<<<<<< HEAD
 @@ -11610,6 +11653,38 @@ static struct pernet_operations __net_in
+=======
+@@ -11579,6 +11622,38 @@ static struct pernet_operations __net_in
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
   *
   */
  
@@ -317,7 +329,11 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  /*
   *       This is called single threaded during boot, so no need
   *       to take the rtnl semaphore.
+<<<<<<< HEAD
 @@ -11660,7 +11735,10 @@ static int __init net_dev_init(void)
+=======
+@@ -11629,7 +11704,10 @@ static int __init net_dev_init(void)
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
  		init_gro_hash(&sd->backlog);
  		sd->backlog.poll = process_backlog;
  		sd->backlog.weight = weight_p;

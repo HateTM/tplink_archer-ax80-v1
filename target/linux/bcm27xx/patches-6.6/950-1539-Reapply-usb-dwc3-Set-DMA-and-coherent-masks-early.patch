@@ -238,7 +238,11 @@ This reverts commit 09dfdf6129532e19b2cfd4992d1d09e7119ccd48.
  
  	/* default to highest possible threshold */
  	lpm_nyet_threshold = 0xf;
+<<<<<<< HEAD:target/linux/bcm27xx/patches-6.6/950-1539-Reapply-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
 @@ -1549,6 +1588,9 @@ static void dwc3_get_properties(struct d
+=======
+@@ -1525,6 +1564,9 @@ static void dwc3_get_properties(struct d
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76):target/linux/bcm27xx/patches-6.6/950-0519-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
  	 */
  	tx_fifo_resize_max_num = 6;
  
@@ -248,7 +252,11 @@ This reverts commit 09dfdf6129532e19b2cfd4992d1d09e7119ccd48.
  	dwc->maximum_speed = usb_get_maximum_speed(dev);
  	dwc->max_ssp_rate = usb_get_maximum_ssp_rate(dev);
  	dwc->dr_mode = usb_get_dr_mode(dev);
+<<<<<<< HEAD:target/linux/bcm27xx/patches-6.6/950-1539-Reapply-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
 @@ -1669,6 +1711,9 @@ static void dwc3_get_properties(struct d
+=======
+@@ -1639,6 +1681,9 @@ static void dwc3_get_properties(struct d
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76):target/linux/bcm27xx/patches-6.6/950-0519-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
  	dwc->dis_split_quirk = device_property_read_bool(dev,
  				"snps,dis-split-quirk");
  
@@ -258,16 +266,24 @@ This reverts commit 09dfdf6129532e19b2cfd4992d1d09e7119ccd48.
  	dwc->lpm_nyet_threshold = lpm_nyet_threshold;
  	dwc->tx_de_emphasis = tx_de_emphasis;
  
+<<<<<<< HEAD:target/linux/bcm27xx/patches-6.6/950-1539-Reapply-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
 @@ -1686,6 +1731,8 @@ static void dwc3_get_properties(struct d
+=======
+@@ -1656,6 +1701,8 @@ static void dwc3_get_properties(struct d
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76):target/linux/bcm27xx/patches-6.6/950-0519-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
  	dwc->tx_thr_num_pkt_prd = tx_thr_num_pkt_prd;
  	dwc->tx_max_burst_prd = tx_max_burst_prd;
  
 +	dwc->axi_pipe_limit = axi_pipe_limit;
 +
  	dwc->tx_fifo_resize_max_num = tx_fifo_resize_max_num;
+<<<<<<< HEAD:target/linux/bcm27xx/patches-6.6/950-1539-Reapply-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
  }
  
 @@ -1978,6 +2025,12 @@ static int dwc3_probe(struct platform_de
+=======
+@@ -1952,6 +1999,12 @@ static int dwc3_probe(struct platform_de
+>>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76):target/linux/bcm27xx/patches-6.6/950-0519-usb-dwc3-Set-DMA-and-coherent-masks-early.patch
  	if (IS_ERR(dwc->usb_psy))
  		return dev_err_probe(dev, PTR_ERR(dwc->usb_psy), "couldn't get usb power supply\n");
  
