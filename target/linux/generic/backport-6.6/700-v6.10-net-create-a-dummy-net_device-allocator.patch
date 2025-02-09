@@ -51,6 +51,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 +++ b/net/core/dev.c
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -10390,25 +10390,12 @@ err_free_name:
 =======
 @@ -10359,25 +10359,12 @@ err_free_name:
@@ -58,6 +59,12 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 =======
 @@ -10390,25 +10390,12 @@ err_free_name:
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
+=======
+@@ -10390,25 +10390,12 @@ err_free_name:
+=======
+@@ -10359,25 +10359,12 @@ err_free_name:
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  }
  EXPORT_SYMBOL(register_netdevice);
  
@@ -89,6 +96,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
  	 */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -10428,12 +10415,32 @@ int init_dummy_netdev(struct net_device
 =======
 @@ -10397,12 +10384,32 @@ int init_dummy_netdev(struct net_device
@@ -96,6 +104,12 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 =======
 @@ -10428,12 +10415,32 @@ int init_dummy_netdev(struct net_device
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
+=======
+@@ -10428,12 +10415,32 @@ int init_dummy_netdev(struct net_device
+=======
+@@ -10397,12 +10384,32 @@ int init_dummy_netdev(struct net_device
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  	 * because users of this 'device' dont need to change
  	 * its refcount.
  	 */
@@ -131,6 +145,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
   *	@dev: device to register
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -11027,6 +11034,19 @@ void free_netdev(struct net_device *dev)
 =======
 @@ -10996,6 +11003,19 @@ void free_netdev(struct net_device *dev)
@@ -138,6 +153,12 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 =======
 @@ -11027,6 +11034,19 @@ void free_netdev(struct net_device *dev)
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
+=======
+@@ -11027,6 +11034,19 @@ void free_netdev(struct net_device *dev)
+=======
+@@ -10996,6 +11003,19 @@ void free_netdev(struct net_device *dev)
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  EXPORT_SYMBOL(free_netdev);
  
  /**

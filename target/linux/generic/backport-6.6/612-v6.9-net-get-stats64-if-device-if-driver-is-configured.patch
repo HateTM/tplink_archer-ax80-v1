@@ -20,6 +20,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
 +++ b/net/core/dev.c
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -10703,6 +10703,8 @@ struct rtnl_link_stats64 *dev_get_stats(
 =======
 @@ -10672,6 +10672,8 @@ struct rtnl_link_stats64 *dev_get_stats(
@@ -27,6 +28,12 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
 =======
 @@ -10703,6 +10703,8 @@ struct rtnl_link_stats64 *dev_get_stats(
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
+=======
+@@ -10703,6 +10703,8 @@ struct rtnl_link_stats64 *dev_get_stats(
+=======
+@@ -10672,6 +10672,8 @@ struct rtnl_link_stats64 *dev_get_stats(
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  		ops->ndo_get_stats64(dev, storage);
  	} else if (ops->ndo_get_stats) {
  		netdev_stats_to_stats64(storage, ops->ndo_get_stats(dev));

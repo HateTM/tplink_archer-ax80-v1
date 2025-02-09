@@ -30,7 +30,11 @@ Signed-off-by: Jonathan Bell <jonathan@raspberrypi.com>
 @@ -1634,6 +1637,8 @@ static void dwc3_get_properties(struct d
 =======
 @@ -1661,6 +1664,8 @@ static void dwc3_get_properties(struct d
+<<<<<<< HEAD
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  				"snps,parkmode-disable-ss-quirk");
  	dwc->parkmode_disable_hs_quirk = device_property_read_bool(dev,
  				"snps,parkmode-disable-hs-quirk");

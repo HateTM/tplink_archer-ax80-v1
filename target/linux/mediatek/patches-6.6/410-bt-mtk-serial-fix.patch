@@ -23,7 +23,11 @@
 @@ -2783,6 +2783,11 @@ serial8250_do_set_termios(struct uart_po
 =======
 @@ -2775,6 +2775,11 @@ serial8250_do_set_termios(struct uart_po
+<<<<<<< HEAD
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  	unsigned long flags;
  	unsigned int baud, quot, frac = 0;
  

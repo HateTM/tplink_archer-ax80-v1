@@ -17587,7 +17587,11 @@ Signed-off-by: Phil Elwell <phil@raspberrypi.com>
 @@ -2254,6 +2254,8 @@ static const struct usb_audio_quirk_flag
 =======
 @@ -2253,6 +2253,8 @@ static const struct usb_audio_quirk_flag
+<<<<<<< HEAD
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  		   QUIRK_FLAG_ALIGN_TRANSFER),
  	DEVICE_FLG(0x534d, 0x2109, /* MacroSilicon MS2109 */
  		   QUIRK_FLAG_ALIGN_TRANSFER),

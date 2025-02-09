@@ -25,6 +25,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 +++ b/net/core/dev.c
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -11020,7 +11020,8 @@ void free_netdev(struct net_device *dev)
 =======
 @@ -10989,7 +10989,8 @@ void free_netdev(struct net_device *dev)
@@ -32,6 +33,12 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 =======
 @@ -11020,7 +11020,8 @@ void free_netdev(struct net_device *dev)
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
+=======
+@@ -11020,7 +11020,8 @@ void free_netdev(struct net_device *dev)
+=======
+@@ -10989,7 +10989,8 @@ void free_netdev(struct net_device *dev)
+>>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+>>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
  	dev->xdp_bulkq = NULL;
  
  	/*  Compatibility with error handling in drivers */
