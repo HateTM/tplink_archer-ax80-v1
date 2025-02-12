@@ -26,10 +26,14 @@
 --- a/src/ap/sta_info.h
 +++ b/src/ap/sta_info.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -414,23 +414,8 @@ int ap_sta_re_add(struct hostapd_data *h
 =======
 @@ -409,23 +409,8 @@ int ap_sta_re_add(struct hostapd_data *h
 >>>>>>> 767339066e (hostapd: backport upstream patch to fix setting BSS color)
+=======
+@@ -408,23 +408,8 @@ int ap_sta_re_add(struct hostapd_data *h
+>>>>>>> cb4d2b3fb2 (hostapd: fix sta psk index for dynamic psk auth)
  
  void ap_free_sta_pasn(struct hostapd_data *hapd, struct sta_info *sta);
  
