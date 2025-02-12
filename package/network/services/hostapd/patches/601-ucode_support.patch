@@ -817,10 +817,14 @@ as adding/removing interfaces.
  		*vlan_id = 0;
  	if (psk_len)
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -446,13 +447,18 @@ static const u8 * hostapd_wpa_auth_get_p
 =======
 @@ -449,13 +450,16 @@ static const u8 * hostapd_wpa_auth_get_p
 >>>>>>> 4779b731d4 (hostapd: update to version 2025-02-09)
+=======
+@@ -449,13 +450,18 @@ static const u8 * hostapd_wpa_auth_get_p
+>>>>>>> 8118b2dace (hostapd: fix sta psk index for dynamic psk auth)
  	 * returned psk which should not be returned again.
  	 * logic list (all hostapd_get_psk; all sta->psk)
  	 */
@@ -841,15 +845,22 @@ as adding/removing interfaces.
  				if (pbkdf2_sha1(pos->passphrase,
  						hapd->conf->ssid.ssid,
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -466,9 +472,13 @@ static const u8 * hostapd_wpa_auth_get_p
+=======
+@@ -469,9 +475,13 @@ static const u8 * hostapd_wpa_auth_get_p
+>>>>>>> 8118b2dace (hostapd: fix sta psk index for dynamic psk auth)
  			}
  			if (pos->psk == prev_psk) {
  				psk = pos->next ? pos->next->psk : NULL;
 +				if (vlan_id)
 +					sta->psk_idx = psk_idx + 1;
+<<<<<<< HEAD
 =======
 @@ -472,6 +476,8 @@ static const u8 * hostapd_wpa_auth_get_p
 >>>>>>> 4779b731d4 (hostapd: update to version 2025-02-09)
+=======
+>>>>>>> 8118b2dace (hostapd: fix sta psk index for dynamic psk auth)
  				break;
  			}
  		}
