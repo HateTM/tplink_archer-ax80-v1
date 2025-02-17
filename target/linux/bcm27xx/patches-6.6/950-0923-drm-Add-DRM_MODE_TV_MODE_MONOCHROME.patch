@@ -29,7 +29,11 @@ Signed-off-by: Nick Hollinghurst <nick.hollinghurst@raspberrypi.com>
  };
  DRM_ENUM_NAME_FN(drm_get_tv_mode_name, drm_tv_mode_enum_list)
  
+<<<<<<< HEAD
 @@ -1740,6 +1741,12 @@ EXPORT_SYMBOL(drm_connector_attach_dp_su
+=======
+@@ -1736,6 +1737,12 @@ EXPORT_SYMBOL(drm_connector_attach_dp_su
+>>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
   *		TV Mode is CCIR System B (aka 625-lines) together with
   *		the SECAM Color Encoding.
   *

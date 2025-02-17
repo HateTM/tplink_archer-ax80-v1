@@ -17,7 +17,11 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 @@ -3287,6 +3287,18 @@ static const struct usb_device_id uvc_id
 =======
 @@ -3269,6 +3269,18 @@ static const struct usb_device_id uvc_id
+<<<<<<< HEAD
 >>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
+=======
+>>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+>>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
  	  .bInterfaceSubClass	= 1,
  	  .bInterfaceProtocol	= 0,
  	  .driver_info		= UVC_INFO_META(V4L2_META_FMT_D4XX) },
@@ -73,7 +77,11 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 =======
  
 @@ -1296,9 +1301,149 @@ static void uvc_video_decode_data(struct
+<<<<<<< HEAD
 >>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
+=======
+>>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+>>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
  	uvc_urb->async_operations++;
  }
  
@@ -227,7 +235,11 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 @@ -1905,6 +2050,8 @@ static int uvc_init_video_isoc(struct uv
 =======
 @@ -1880,6 +2025,8 @@ static int uvc_init_video_isoc(struct uv
+<<<<<<< HEAD
 >>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
+=======
+>>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+>>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
  	if (npackets == 0)
  		return -ENOMEM;
  
@@ -249,6 +261,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
  #define UVC_FMT_FLAG_COMPRESSED		0x00000001
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -591,6 +593,7 @@ struct uvc_device {
 =======
 @@ -586,6 +588,7 @@ struct uvc_device {
@@ -256,6 +269,12 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 =======
 @@ -591,6 +593,7 @@ struct uvc_device {
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
+=======
+@@ -591,6 +593,7 @@ struct uvc_device {
+=======
+@@ -586,6 +588,7 @@ struct uvc_device {
+>>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+>>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
  
  	struct input_dev *input;
  	char input_phys[64];

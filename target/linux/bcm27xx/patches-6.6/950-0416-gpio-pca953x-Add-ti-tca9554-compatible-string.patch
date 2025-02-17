@@ -13,6 +13,7 @@ Signed-off-by: Phil Elwell <phil@raspberrypi.com>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -1311,6 +1311,7 @@ static const struct of_device_id pca953x
 =======
 @@ -1330,6 +1330,7 @@ static const struct of_device_id pca953x
@@ -21,11 +22,19 @@ Signed-off-by: Phil Elwell <phil@raspberrypi.com>
 @@ -1311,6 +1311,7 @@ static const struct of_device_id pca953x
 >>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
 =======
+=======
+>>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
 @@ -1311,6 +1311,7 @@ static const struct of_device_id pca953x
 =======
 @@ -1330,6 +1330,7 @@ static const struct of_device_id pca953x
 >>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+<<<<<<< HEAD
 >>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
+=======
+=======
+@@ -1311,6 +1311,7 @@ static const struct of_device_id pca953x
+>>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+>>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
  	{ .compatible = "ti,tca6424", .data = OF_953X(24, PCA_INT), },
  	{ .compatible = "ti,tca9538", .data = OF_953X( 8, PCA_INT), },
  	{ .compatible = "ti,tca9539", .data = OF_953X(16, PCA_INT), },
