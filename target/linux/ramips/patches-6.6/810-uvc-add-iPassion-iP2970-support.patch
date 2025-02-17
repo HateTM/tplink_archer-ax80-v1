@@ -13,7 +13,11 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 
 --- a/drivers/media/usb/uvc/uvc_driver.c
 +++ b/drivers/media/usb/uvc/uvc_driver.c
+<<<<<<< HEAD
 @@ -3287,6 +3287,18 @@ static const struct usb_device_id uvc_id
+=======
+@@ -3269,6 +3269,18 @@ static const struct usb_device_id uvc_id
+>>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
  	  .bInterfaceSubClass	= 1,
  	  .bInterfaceProtocol	= 0,
  	  .driver_info		= UVC_INFO_META(V4L2_META_FMT_D4XX) },
@@ -64,7 +68,12 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
  
  #include <media/jpeg.h>
  #include <media/v4l2-common.h>
+<<<<<<< HEAD
 @@ -1321,9 +1326,149 @@ static void uvc_video_decode_data(struct
+=======
+ 
+@@ -1296,9 +1301,149 @@ static void uvc_video_decode_data(struct
+>>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
  	uvc_urb->async_operations++;
  }
  
@@ -214,7 +223,11 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
  	/* Mark the buffer as done if the EOF marker is set. */
  	if (data[1] & UVC_STREAM_EOF && buf->bytesused != 0) {
  		uvc_dbg(stream->dev, FRAME, "Frame complete (EOF found)\n");
+<<<<<<< HEAD
 @@ -1905,6 +2050,8 @@ static int uvc_init_video_isoc(struct uv
+=======
+@@ -1880,6 +2025,8 @@ static int uvc_init_video_isoc(struct uv
+>>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
  	if (npackets == 0)
  		return -ENOMEM;
  
@@ -234,7 +247,11 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
  
  /* Format flags */
  #define UVC_FMT_FLAG_COMPRESSED		0x00000001
+<<<<<<< HEAD
 @@ -591,6 +593,7 @@ struct uvc_device {
+=======
+@@ -586,6 +588,7 @@ struct uvc_device {
+>>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
  
  	struct input_dev *input;
  	char input_phys[64];
