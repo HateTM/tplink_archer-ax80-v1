@@ -1,0 +1,79 @@
+name: Build OpenWrt 23.05.5 Custom Firmware
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      OPENWRT_VERSION: "v24.10.0"  # Тег релиза OpenWrt
+      OPENWRT_REPO: "https://git.openwrt.org/openwrt/openwrt.git"
+
+    steps:
+    - name: Checkout Forked Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Для полной истории коммитов
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libncurses5-dev libncursesw5-dev \
+        zlib1g-dev gawk git gettext libssl-dev xsltproc wget unzip python3 ccache
+
+    - name: Clone Official OpenWrt Repository
+      run: |
+        git clone $OPENWRT_REPO official_openwrt
+        cd official_openwrt
+        git checkout tags/$OPENWRT_VERSION -b build-$OPENWRT_VERSION
+
+    - name: Add Fork Remote and Rebase
+      run: |
+        cd official_openwrt
+        git remote add fork ../
+        git fetch fork
+        # git rebase fork/main
+        # Либо используйте merge, если предпочитаете:
+        git merge fork/main --allow-unrelated-histories -m "Merge custom OpenWrt build."
+
+    - name: Update and Install Feeds
+      run: |
+        cd official_openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
+    - name: Setup Build Configuration
+      run: |
+        cd official_openwrt
+        if [ -f "../.config" ]; then
+          cp ../.config ./
+        else
+          make defconfig
+        fi
+
+    - name: Build OpenWrt
+      run: |
+        cd official_openwrt
+        make -j$(nproc) V=s
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: openwrt-build-${{ github.run_id }}
+        path: official_openwrt/bin/targets/
+
+    - name: Cache Ccache
+      uses: actions/cache@v4.2.0
+      with:
+        path: ~/.ccache
+        key: ${{ runner.os }}-ccache-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-ccache-
