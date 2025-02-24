@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      OPENWRT_VERSION: "v23.05.5"  # Тег релиза OpenWrt
+      OPENWRT_VERSION: "v24.10.0"  # Тег релиза OpenWrt
       OPENWRT_REPO: "https://git.openwrt.org/openwrt/openwrt.git"
-      CUSTOM_REPO_URL: "https://github.com/HateTM/owrr.git"  # Замените на URL вашей репозитории
+      CUSTOM_REPO_URL: "https://github.com/HateTM/tplink_archer-ax80-v1.git"  # Замените на URL вашей репозитории
       CUSTOM_REPO_DIR: "Ax80GPT"
 
     steps:
@@ -46,7 +46,7 @@ jobs:
         cd openwrt
         git remote add custom ../$CUSTOM_REPO_DIR
         git fetch custom
-        git rebase custom/main 
+        git rebase custom/24.10-test 
         # Если используется другая ветка, замените `custom/main` на нужную, например `custom/develop`
 
     - name: Update and Install Feeds
