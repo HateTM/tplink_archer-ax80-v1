@@ -1,0 +1,88 @@
+name: Build OpenWrt 23.05.5 Custom Firmware
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      OPENWRT_VERSION: "v23.05.5"  # Тег релиза OpenWrt
+      OPENWRT_REPO: "https://git.openwrt.org/openwrt/openwrt.git"
+      CUSTOM_REPO_URL: "https://github.com/HateTM/owrr.git"  # Замените на URL вашей репозитории
+      CUSTOM_REPO_DIR: "Ax80GPT"
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Для возможности работы с ветками и тегами
+
+    - name: Set up Git
+      run: |
+            git config --global user.name "github-actions"
+            git config --global user.email "actions@github.com"
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libncurses5-dev libncursesw5-dev \
+        zlib1g-dev gawk git gettext libssl-dev xsltproc wget unzip python3 ccache
+
+    - name: Clone Official OpenWrt Repository
+      run: |
+        git clone $OPENWRT_REPO openwrt
+        cd openwrt
+        git checkout tags/$OPENWRT_VERSION -b build-$OPENWRT_VERSION
+
+    - name: Clone Custom Repository
+      run: |
+        git clone $CUSTOM_REPO_URL $CUSTOM_REPO_DIR
+
+    - name: Merge Custom Changes
+      run: |
+        cd openwrt
+        git remote add custom ../$CUSTOM_REPO_DIR
+        git fetch custom
+        git rebase custom/main 
+        # Если используется другая ветка, замените `custom/main` на нужную, например `custom/develop`
+
+    - name: Update and Install Feeds
+      run: |
+        cd openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
+    - name: Setup Build Configuration
+      run: |
+        cd openwrt
+        # Если у вас есть готовый файл .config в вашей репозитории, например в корне
+        # Скопируйте его в директорию OpenWrt
+        # Для этого закомментируйте или удалите строку `make defconfig`, если используете свой .config
+
+        if [ -f "../.config" ]; then
+          cp ../.config ./
+        else
+          make defconfig
+        fi
+
+    - name: Build OpenWrt
+      run: |
+        cd openwrt
+        make -j$(nproc) V=s
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: openwrt-build-${{ github.run_id }}
+        path: openwrt/bin/targets/
+
+    - name: Cache Ccache
+      uses: actions/cache@v4
+      with:
+        path: ~/.ccache
+        key: ${{ runner.os }}-ccache-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-ccache-
