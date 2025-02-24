@@ -42,7 +42,7 @@ jobs:
         git fetch fork
         # git rebase fork/main
         # Либо используйте merge, если предпочитаете:
-        git merge fork/main --allow-unrelated-histories -m "Merge custom OpenWrt build."
+        git merge fork/24.10-test --allow-unrelated-histories -m "Merge custom OpenWrt build."
 
     - name: Update and Install Feeds
       run: |
