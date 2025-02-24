@@ -1,4 +1,4 @@
-name: Build OpenWrt 23.05.5 Custom Firmware
+name: Build OpenWrt Custom Firmware
 
 on:
   repository_dispatch:
