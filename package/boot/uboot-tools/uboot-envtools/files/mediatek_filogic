@@ -34,7 +34,10 @@ ubootenv_add_ubi_default() {
 
 case "$board" in
 abt,asr3000|\
+<<<<<<< HEAD:package/boot/uboot-tools/uboot-envtools/files/mediatek_filogic
 asus,zenwifi-bt8-ubootmod|\
+=======
+>>>>>>> df8679e29f (mediatek: add support for CMCC A10):package/boot/uboot-envtools/files/mediatek_filogic
 cmcc,a10-ubootmod|\
 h3c,magic-nx30-pro|\
 jcg,q30-pro|\
