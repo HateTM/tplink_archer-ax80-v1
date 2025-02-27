@@ -262,6 +262,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -591,6 +593,7 @@ struct uvc_device {
 =======
 @@ -586,6 +588,7 @@ struct uvc_device {
@@ -270,11 +271,19 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
 @@ -591,6 +593,7 @@ struct uvc_device {
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
 =======
+=======
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
 @@ -591,6 +593,7 @@ struct uvc_device {
 =======
 @@ -586,6 +588,7 @@ struct uvc_device {
 >>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+<<<<<<< HEAD
 >>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
+=======
+=======
+@@ -591,6 +593,7 @@ struct uvc_device {
+>>>>>>> 41613c0f7b (kernel: bump 6.6 to 6.6.80)
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
  
  	struct input_dev *input;
  	char input_phys[64];

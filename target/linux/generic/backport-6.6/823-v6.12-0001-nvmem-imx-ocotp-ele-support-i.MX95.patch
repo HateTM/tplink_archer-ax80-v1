@@ -43,6 +43,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -179,8 +183,30 @@ static const struct ocotp_devtype_data i
 =======
 @@ -157,8 +161,30 @@ static const struct ocotp_devtype_data i
@@ -51,11 +52,19 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 @@ -179,8 +183,30 @@ static const struct ocotp_devtype_data i
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
 =======
+=======
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
 @@ -179,8 +183,30 @@ static const struct ocotp_devtype_data i
 =======
 @@ -157,8 +161,30 @@ static const struct ocotp_devtype_data i
 >>>>>>> b9c6aeb628 (kernel: bump 6.6 to 6.6.78)
+<<<<<<< HEAD
 >>>>>>> 016528f8d4 (kernel: bump 6.6 to 6.6.78)
+=======
+=======
+@@ -179,8 +183,30 @@ static const struct ocotp_devtype_data i
+>>>>>>> 41613c0f7b (kernel: bump 6.6 to 6.6.80)
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
  	},
  };
  

@@ -23,6 +23,7 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -9796,6 +9796,15 @@ static void netdev_sync_lower_features(s
 =======
 @@ -9765,6 +9765,15 @@ static void netdev_sync_lower_features(s
@@ -31,11 +32,19 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 @@ -9796,6 +9796,15 @@ static void netdev_sync_lower_features(s
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
 =======
+=======
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
 @@ -9796,6 +9796,15 @@ static void netdev_sync_lower_features(s
 =======
 @@ -9765,6 +9765,15 @@ static void netdev_sync_lower_features(s
 >>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+<<<<<<< HEAD
 >>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
+=======
+=======
+@@ -9796,6 +9796,15 @@ static void netdev_sync_lower_features(s
+>>>>>>> 41613c0f7b (kernel: bump 6.6 to 6.6.80)
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
  	}
  }
  
@@ -54,6 +63,7 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -9877,15 +9886,9 @@ static netdev_features_t netdev_fix_feat
 =======
 @@ -9846,15 +9855,9 @@ static netdev_features_t netdev_fix_feat
@@ -62,11 +72,19 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 @@ -9877,15 +9886,9 @@ static netdev_features_t netdev_fix_feat
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
 =======
+=======
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
 @@ -9877,15 +9886,9 @@ static netdev_features_t netdev_fix_feat
 =======
 @@ -9846,15 +9855,9 @@ static netdev_features_t netdev_fix_feat
 >>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+<<<<<<< HEAD
 >>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
+=======
+=======
+@@ -9877,15 +9886,9 @@ static netdev_features_t netdev_fix_feat
+>>>>>>> 41613c0f7b (kernel: bump 6.6 to 6.6.80)
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
  		features &= ~NETIF_F_LRO;
  	}
  
@@ -88,6 +106,7 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -9893,6 +9896,11 @@ static netdev_features_t netdev_fix_feat
 =======
 @@ -9862,6 +9865,11 @@ static netdev_features_t netdev_fix_feat
@@ -96,11 +115,19 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 @@ -9893,6 +9896,11 @@ static netdev_features_t netdev_fix_feat
 >>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
 =======
+=======
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
 @@ -9893,6 +9896,11 @@ static netdev_features_t netdev_fix_feat
 =======
 @@ -9862,6 +9865,11 @@ static netdev_features_t netdev_fix_feat
 >>>>>>> 667b131ad1 (kernel: bump 6.6 to 6.6.76)
+<<<<<<< HEAD
 >>>>>>> 2d9f082126 (kernel: bump 6.6 to 6.6.76)
+=======
+=======
+@@ -9893,6 +9896,11 @@ static netdev_features_t netdev_fix_feat
+>>>>>>> 41613c0f7b (kernel: bump 6.6 to 6.6.80)
+>>>>>>> 979bee92b3 (kernel: bump 6.6 to 6.6.80)
  		features &= ~NETIF_F_HW_TLS_RX;
  	}
  

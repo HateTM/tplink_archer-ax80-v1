@@ -89,7 +89,11 @@ Signed-off-by: Maxime Ripard <maxime@cerno.tech>
  			commit->event = kzalloc(sizeof(*commit->event),
 --- a/drivers/gpu/drm/i915/display/intel_display.c
 +++ b/drivers/gpu/drm/i915/display/intel_display.c
+<<<<<<< HEAD
 @@ -7297,6 +7297,19 @@ int intel_atomic_commit(struct drm_devic
+=======
+@@ -7298,6 +7298,19 @@ int intel_atomic_commit(struct drm_devic
+>>>>>>> 41613c0f7b (kernel: bump 6.6 to 6.6.80)
  				state->base.legacy_cursor_update = false;
  	}
  
