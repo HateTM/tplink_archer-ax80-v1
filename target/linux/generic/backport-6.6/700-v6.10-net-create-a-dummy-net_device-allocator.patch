@@ -50,10 +50,14 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 --- a/net/core/dev.c
 +++ b/net/core/dev.c
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -10390,25 +10390,12 @@ err_free_name:
 =======
 @@ -10359,25 +10359,12 @@ err_free_name:
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+@@ -10390,25 +10390,12 @@ err_free_name:
+>>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
  }
  EXPORT_SYMBOL(register_netdevice);
  
@@ -84,10 +88,14 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
  	 * register/unregister code path
  	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -10428,12 +10415,32 @@ int init_dummy_netdev(struct net_device
 =======
 @@ -10397,12 +10384,32 @@ int init_dummy_netdev(struct net_device
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+@@ -10428,12 +10415,32 @@ int init_dummy_netdev(struct net_device
+>>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
  	 * because users of this 'device' dont need to change
  	 * its refcount.
  	 */
@@ -122,10 +130,14 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
   *	register_netdev	- register a network device
   *	@dev: device to register
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -11027,6 +11034,19 @@ void free_netdev(struct net_device *dev)
 =======
 @@ -10996,6 +11003,19 @@ void free_netdev(struct net_device *dev)
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+@@ -11027,6 +11034,19 @@ void free_netdev(struct net_device *dev)
+>>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
  EXPORT_SYMBOL(free_netdev);
  
  /**

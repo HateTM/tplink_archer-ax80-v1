@@ -248,10 +248,14 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
  /* Format flags */
  #define UVC_FMT_FLAG_COMPRESSED		0x00000001
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -591,6 +593,7 @@ struct uvc_device {
 =======
 @@ -586,6 +588,7 @@ struct uvc_device {
 >>>>>>> 57b0304ce9 (kernel: bump 6.6 to 6.6.78)
+=======
+@@ -591,6 +593,7 @@ struct uvc_device {
+>>>>>>> 86fd00b0fb (kernel: bump 6.6 to 6.6.80)
  
  	struct input_dev *input;
  	char input_phys[64];
