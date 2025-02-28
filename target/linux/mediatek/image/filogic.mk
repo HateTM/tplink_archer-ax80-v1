@@ -1358,14 +1358,20 @@ define Device/tplink_archer-ax80-v1
   BLOCKSIZE := 128k
   PAGESIZE := 2048
   KERNEL_IN_UBI := 1
+  KERNEL_LOADADDR := 0x46000000
   IMAGE_SIZE := 51200k
-  IMAGES += factory.bin
-  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
-  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   KERNEL = kernel-bin | lzma | \
         fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb
   KERNEL_INITRAMFS = kernel-bin | lzma | \
         fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd
+  IMAGES += factory.ubi web-ui-factory.bin sysupgrade.bin
+  IMAGE/factory.ubi := append-ubi
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/web-ui-factory.bin := append-ubi | tplink-image-2022
+  TPLINK_SUPPORT_STRING := SupportList: \
+		EAP610-Outdoor(TP-Link|UN|AX1800-D):1.0 \
+		EAP610-Outdoor(TP-Link|JP|AX1800-D):1.0 \
+		EAP610-Outdoor(TP-Link|CA|AX1800-D):1.0
 endef
 TARGET_DEVICES += tplink_archer-ax80-v1
 
