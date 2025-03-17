@@ -26,7 +26,7 @@
 	memory@40000000 {
 		reg = <0 0x40000000 0 0x20000000>;
 	};
-
+	
 	keys {
 		compatible = "gpio-keys";
 		
@@ -34,25 +34,25 @@
 			label = "reset";
 			linux,code = <KEY_RESTART>;
 			gpios = <&pio 7 GPIO_ACTIVE_LOW>;
-			linux,input-type = <1>;
+			
 		};
+		
 		ledswitch {
 			label = "ledswitch";
 			linux,code = <KEY_BRIGHTNESS_ZERO>;
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
-			linux,input-type = <1>;
 		};
 		wps {
 			label = "wps";
 			linux,code = <KEY_WPS_BUTTON>;
 			gpios = <&pio 10 GPIO_ACTIVE_LOW>;
-			linux,input-type = <1>;
 		};
+		
 		wifi {
 			label = "wlan";
 			linux,code = <KEY_WLAN>;
 			gpios = <&pio 16 GPIO_ACTIVE_LOW>;
-			linux,input-type = <1>;
+
 		};
 	};
 	
@@ -73,6 +73,7 @@
 		regulator-boot-on;
 		regulator-always-on;
 	};
+	
 	reg_5v: regulator-5v {
 		compatible = "regulator-fixed";
 		regulator-name = "fixed-5V";
@@ -93,6 +94,7 @@
 
 &eth {
 	status = "okay";
+	
 	gmac0: mac@0 {
 		compatible = "mediatek,eth-mac";
 		reg = <0>;
@@ -103,12 +105,14 @@
 			pause;
 		};
 	};
+	
 	gmac1: mac@1 {
 		compatible = "mediatek,eth-mac";
 		reg = <1>;
 		phy-mode = "2500base-x";
 		phy-handle = <&phy6>;
 	};
+	
 	mdio: mdio-bus {
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -187,7 +191,7 @@
 		partition@200000 {
 			label = "u-boot-env";
 			reg = <0x0200000 0x0100000>;
-                };
+		};
 		
 		partition@300000 {
 			label = "ubi0";
@@ -197,7 +201,6 @@
 		partition@3500000 {
 			label = "ubi1";
 			reg = <0x3500000 0x3200000>;
-			read-only;
 		};
 		
 		partition@6700000 {
@@ -344,7 +347,7 @@
 			led-cur = /bits/ 8 <0x14>;
 			max-cur = /bits/ 8 <0x20>;
 			reg = <1>;
-			color = <LED_COLOR_ID_BLUE>;	
+			color = <LED_COLOR_ID_BLUE>;
 		};
 		
 		led@2 {
@@ -352,7 +355,7 @@
 			led-cur = /bits/ 8 <0x14>;
 			max-cur = /bits/ 8 <0x20>;
 			reg = <2>;
-			color = <LED_COLOR_ID_BLUE>;	
+			color = <LED_COLOR_ID_BLUE>;
 		};
 		
 		led_G1: led@3 {
@@ -368,7 +371,7 @@
 			led-cur = /bits/ 8 <0x14>;
 			max-cur = /bits/ 8 <0x20>;
 			reg = <4>;
-			color = <LED_COLOR_ID_GREEN>;	
+			color = <LED_COLOR_ID_GREEN>;
 		};
 		
 		led@5 {
@@ -376,7 +379,7 @@
 			led-cur = /bits/ 8 <0x14>;
 			max-cur = /bits/ 8 <0x20>;
 			reg = <5>;
-			color = <LED_COLOR_ID_GREEN>;	
+			color = <LED_COLOR_ID_GREEN>;
 		};
 		
 		led_R1: led@6 {
@@ -384,7 +387,7 @@
 			led-cur = /bits/ 8 <0x14>;
 			max-cur = /bits/ 8 <0x20>;
 			reg = <6>;
-			color = <LED_COLOR_ID_RED>;	
+			color = <LED_COLOR_ID_RED>;
 		};
 		
 		led@7 {

@@ -350,6 +350,8 @@ define Trusted-Firmware-A/mt7986-spim-nand-ddr3
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7986
   DDR_TYPE:=ddr3
+  HIDDEN:=
+  DEFAULT:=TARGET_mediatek_filogic
 endef
 
 define Trusted-Firmware-A/mt7986-spim-nand-ubi-ddr3
