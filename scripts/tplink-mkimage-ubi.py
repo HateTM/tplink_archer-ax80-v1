@@ -15,15 +15,13 @@ import os
 import random
 import struct
 import tempfile
-from typing import List, Optional, Tuple
 
 HEADER_SIZE = 0x1014
 MODULE_HEADER_SIZE = 0x2C
 
 MD5_KEY = bytes.fromhex("7a2b15ed9b98596de504ab44ac2a9f4e")
 
-UPGRADE_HEADER_MAGIC = bytes.fromhex(
-    "aa554c5e831f534ba1f8f7c918df8fbf7da155aa")
+UPGRADE_HEADER_MAGIC = bytes.fromhex("aa554c5e831f534ba1f8f7c918df8fbf7da155aa")
 TP_HEADER_MAGIC = bytes.fromhex("aa559dd1a8c88331c969fbbfbcf0d43270c755aa")
 
 SIGNATURE_DATA = bytes.fromhex(
@@ -35,7 +33,7 @@ SIGNATURE_DATA = bytes.fromhex(
 
 
 def create_firmware_id(input_data: str) -> str:
-    return hashlib.md5(input_data.encode('ascii')).hexdigest().upper()
+    return hashlib.md5(input_data.encode("ascii")).hexdigest().upper()
 
 
 def format_support_string(support_text: str) -> str:
@@ -45,7 +43,7 @@ def format_support_string(support_text: str) -> str:
     if "SupportList:" not in support_text:
         support_text = "SupportList:\n" + support_text
 
-    support_text = ' '.join(support_text.split())
+    support_text = " ".join(support_text.split())
     support_text = support_text.replace("} {", "}\n{")
     support_text = support_text.replace("SupportList:", "SupportList:\n")
     support_text = support_text.replace("SupportList:\n ", "SupportList:\n")
@@ -56,82 +54,100 @@ def format_support_string(support_text: str) -> str:
     return support_text
 
 
-def create_support_list(device_name: str, device_ver: str, special_ids: List[str]) -> str:
+def create_support_list(
+    device_name: str, device_ver: str, special_ids: list[str]
+) -> str:
     items = [
-        f"{{product_name:{device_name},product_ver:{device_ver},special_id:{sid}}}" for sid in special_ids]
+        f"{{product_name:{device_name},product_ver:{device_ver},special_id:{sid}}}"
+        for sid in special_ids
+    ]
     return "SupportList:\n" + "\n".join(items) + "\n"
 
 
-def create_version_string(version: str = "1.1.2", build_date: str = "20240126", release_num: str = "68209", fw_id: str = "") -> str:
+def create_version_string(
+    version: str = "1.1.2",
+    build_date: str = "20240126",
+    release_num: str = "68209",
+    fw_id: str = "",
+) -> str:
     return f"soft_ver:{version} Build {build_date} rel.{release_num}\nfw_id:{fw_id}\n\n"
 
 
 def create_header(total_size: int, fw_id: Optional[str] = None) -> bytearray:
     header = bytearray([0xFF] * HEADER_SIZE)
-    header[0:4] = struct.pack('>I', total_size)
+    header[0:4] = struct.pack(">I", total_size)
     header[4:20] = MD5_KEY
 
     header[0x14:0x134] = bytes(0x134 - 0x14)
-    header[0x134:0x136] = struct.pack('<H', 0x0100)
-    header[0x136:0x136+len(UPGRADE_HEADER_MAGIC)] = UPGRADE_HEADER_MAGIC
+    header[0x134:0x136] = struct.pack("<H", 0x0100)
+    header[0x136:0x136 + len(UPGRADE_HEADER_MAGIC)] = UPGRADE_HEADER_MAGIC
     header[0x14A:0x152] = bytes(0x152 - 0x14A)
-    header[0x152:0x152+len(SIGNATURE_DATA)] = SIGNATURE_DATA
+    header[0x152:0x152 + len(SIGNATURE_DATA)] = SIGNATURE_DATA
     header[0x1D2:0x202] = bytes(0x202 - 0x1D2)
-    header[0x202:0x204] = struct.pack('<H', 0x0100)
-    header[0x204:0x204+len(TP_HEADER_MAGIC)] = TP_HEADER_MAGIC
-    header[0x218:0x2A8] = bytes(0x2A8 - 0x218)
+    header[0x202:0x204] = struct.pack("<H", 0x0100)
+    header[0x204:0x204 + len(TP_HEADER_MAGIC)] = TP_HEADER_MAGIC
 
     if fw_id:
-        fw_id_bytes = fw_id.encode('ascii')
-        header[0x2A8:0x2A8+len(fw_id_bytes)] = fw_id_bytes
+        fw_id_bytes = fw_id.encode("ascii")
+        header[0x2A8:0x2A8 + len(fw_id_bytes)] = fw_id_bytes
 
     return header
 
 
-def create_module_files(support: str, version: Optional[str] = None, build_date: Optional[str] = None, release_num: Optional[str] = None, fw_id: Optional[str] = None) -> List[Tuple[str, str]]:
+def create_module_files(
+    support: str,
+    version: Optional[str] = None,
+    build_date: Optional[str] = None,
+    release_num: Optional[str] = None,
+    fw_id: Optional[str] = None,
+) -> list[tuple[str, str]]:
     temp_dir = tempfile.mkdtemp(prefix="temp_modules_")
 
     support_path = os.path.join(temp_dir, "support-list.txt")
-    with open(support_path, 'w', encoding='ascii') as f:
+    with open(support_path, "w", encoding="ascii") as f:
         f.write(format_support_string(support))
 
     version_path = os.path.join(temp_dir, "soft-version.txt")
-    with open(version_path, 'w', encoding='ascii') as f:
-        f.write(create_version_string(
-            version or "1.1.3",
-            build_date or "20240126",
-            release_num or "68209",
-            fw_id or ""
-        ))
+    with open(version_path, "w", encoding="ascii") as f:
+        f.write(
+            create_version_string(
+                version or "1.1.3",
+                build_date or "20240126",
+                release_num or "68209",
+                fw_id or "",
+            )
+        )
 
     return [("support-list", support_path), ("soft-version", version_path)]
 
 
-def create_modules_buffer(module_files: List[Tuple[str, str]]) -> bytearray:
+def create_modules_buffer(module_files: list[tuple[str, str]]) -> bytearray:
     buffer = bytearray()
     total_size = 0
 
     for idx, (module_name, file_path) in enumerate(module_files):
-        with open(file_path, 'rb') as f:
+        with open(file_path, "rb") as f:
             file_content = f.read()
             file_size = len(file_content)
 
         module_header = bytearray(MODULE_HEADER_SIZE)
-        module_name_bytes = module_name.encode('ascii').ljust(44, b'\0')
-        module_header[0:44] = module_name_bytes
 
-        offset_net = struct.pack('>I', total_size + MODULE_HEADER_SIZE)
-        file_size_net = struct.pack('>I', file_size)
+        module_name_bytes = module_name.encode("ascii").ljust(32, b"\0")
+        module_header[0:32] = module_name_bytes
 
-        if idx == 0:
-            module_header[39] = 0xFC
+        content_offset = total_size + MODULE_HEADER_SIZE
+        module_header[32:36] = struct.pack(">I", content_offset)
 
-        module_header[32:36] = offset_net
-        module_header[40:44] = file_size_net
+        if idx == len(module_files) - 1:
+            next_module_offset = 0
+        else:
+            next_module_offset = total_size + MODULE_HEADER_SIZE + file_size
+        module_header[36:40] = struct.pack(">I", next_module_offset)
+        module_header[40:44] = struct.pack(">I", file_size)
+        total_size += MODULE_HEADER_SIZE + file_size
 
         buffer.extend(module_header)
         buffer.extend(file_content)
-        total_size += file_size + MODULE_HEADER_SIZE
 
     return buffer
 
@@ -143,7 +159,7 @@ def build_firmware_image(
     version: Optional[str] = None,
     device_name: Optional[str] = None,
     device_ver: Optional[str] = None,
-    special_ids: Optional[List[str]] = None
+    special_ids: Optional[list[str]] = None,
 ) -> None:
     build_date = datetime.datetime.now().strftime("%Y%m%d")
     release_num = str(random.randint(10000, 99999))
@@ -158,12 +174,13 @@ def build_firmware_image(
         support_str = support
 
     module_files = create_module_files(
-        support_str, version, build_date, release_num, fw_id)
+        support_str, version, build_date, release_num, fw_id
+    )
     modules_buffer = create_modules_buffer(module_files)
 
     rootfs_data = b""
     if rootfs_path:
-        with open(rootfs_path, 'rb') as f:
+        with open(rootfs_path, "rb") as f:
             rootfs_data = f.read()
 
     total_size = HEADER_SIZE + len(modules_buffer) + len(rootfs_data)
@@ -190,19 +207,21 @@ def build_firmware_image(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="TP-Link Ubi-Firmware Image Creation Tool")
+        description="TP-Link Ubi-Firmware Image Creation Tool"
+    )
     parser.add_argument("--create", action="store_true", help="Create image")
     parser.add_argument("image", type=str, help="Output image name")
-    parser.add_argument("--support", type=str, default="",
-                        help='Support list string')
+    parser.add_argument("--support", type=str, default="", help="Support list string")
     parser.add_argument("--rootfs", type=str, help="Rootfs file")
-    parser.add_argument("--version", type=str, help='Firmware version')
-    parser.add_argument("--device-name", type=str, help='Device name')
-    parser.add_argument("--device-ver", type=str, help='Device version')
-    parser.add_argument("--special-ids", type=str,
-                        help='Comma separated list of special_ids')
-    parser.add_argument("--outputprefix", type=str,
-                        default=".", help="Output file directory")
+    parser.add_argument("--version", type=str, help="Firmware version")
+    parser.add_argument("--device-name", type=str, help="Device name")
+    parser.add_argument("--device-ver", type=str, help="Device version")
+    parser.add_argument(
+        "--special-ids", type=str, help="Comma separated list of special_ids"
+    )
+    parser.add_argument(
+        "--outputprefix", type=str, default=".", help="Output file directory"
+    )
 
     args = parser.parse_args()
 
@@ -215,7 +234,7 @@ def main() -> None:
             args.version,
             args.device_name,
             args.device_ver,
-            args.special_ids.split(',') if args.special_ids else None,
+            args.special_ids.split(",") if args.special_ids else None,
         )
     else:
         print("No image creation mode specified (--create).")

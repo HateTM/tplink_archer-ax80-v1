@@ -632,6 +632,7 @@ define Build/tplink-mkimage-ubi
         --device-name "$(TPLINK_DEVICE)" \
         --device-ver "$(TPLINK_VERSION)" \
         --special-ids "$(TPLINK_IDS)" \
+		--version "$(TPLINK_FWVER)" \
         --rootfs "$@" \
         "$(@).new"
     @mv "$(@).new" "$@"
