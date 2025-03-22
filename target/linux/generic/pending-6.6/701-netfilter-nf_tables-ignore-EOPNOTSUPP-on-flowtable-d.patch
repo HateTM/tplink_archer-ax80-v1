@@ -20,6 +20,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
 +++ b/net/netfilter/nf_tables_api.c
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @@ -8470,7 +8470,7 @@ static int nft_register_flowtable_net_ho
 =======
 @@ -8425,7 +8425,7 @@ static int nft_register_flowtable_net_ho
@@ -27,6 +28,9 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
 =======
 @@ -8470,7 +8470,7 @@ static int nft_register_flowtable_net_ho
 >>>>>>> 84e370f16c (kernel: bump 6.6 to 6.6.76)
+=======
+@@ -8469,7 +8469,7 @@ static int nft_register_flowtable_net_ho
+>>>>>>> 314ca03877 (kernel: bump 6.6 to 6.6.84)
  		err = flowtable->data.type->setup(&flowtable->data,
  						  hook->ops.dev,
  						  FLOW_BLOCK_BIND);
