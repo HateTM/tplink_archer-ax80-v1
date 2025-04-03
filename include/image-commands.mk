@@ -626,6 +626,18 @@ define Build/sysupgrade-tar
 		$@
 endef
 
+define Build/tplink-mkimage-ubi
+	$(TOPDIR)/scripts/tplink-mkimage-ubi.py \
+		--create \
+		--device-name "$(TPLINK_DEVICE)" \
+		--device-ver "$(TPLINK_VERSION)" \
+		--special-ids "$(TPLINK_IDS)" \
+		--version "$(TPLINK_FWVER)" \
+		--rootfs "$@" \
+		"$(@).new"
+	@mv "$(@).new" "$@"
+endef
+
 define Build/tplink-safeloader
 	-$(STAGING_DIR_HOST)/bin/tplink-safeloader \
 		-B $(TPLINK_BOARD_ID) \
