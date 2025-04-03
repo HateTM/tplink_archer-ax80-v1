@@ -1500,7 +1500,7 @@ define Device/tplink_archer-ax80-v1
   DEVICE_VENDOR := TP-Link
   DEVICE_MODEL := Archer AX80V1
   DEVICE_DTS_DIR := ../dts
-  DEVICE_PACKAGES := kmod-leds-lp5523 kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+  DEVICE_PACKAGES := kmod-leds-lp5523 kmod-usb3 kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware
   DEVICE_DTS := mt7986a-tplink-archer-ax80-v1
   SUPPORTED_DEVICES += mediatek,mt7986a-snand-rfb
   UBINIZE_OPTS := -E 5
