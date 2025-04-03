@@ -99,6 +99,37 @@ define Build/append-metadata
 	}
 endef
 
+metadata_gl_json = \
+	'{ $(if $(IMAGE_METADATA),$(IMAGE_METADATA)$(comma)) \
+		"metadata_version": "1.1", \
+		"compat_version": "$(call json_quote,$(compat_version))", \
+		$(if $(DEVICE_COMPAT_MESSAGE),"compat_message": "$(call json_quote,$(DEVICE_COMPAT_MESSAGE))"$(comma)) \
+		$(if $(filter-out 1.0,$(compat_version)),"new_supported_devices": \
+			[$(call metadata_devices,$(SUPPORTED_DEVICES))]$(comma) \
+			"supported_devices": ["$(call json_quote,$(legacy_supported_message))"]$(comma)) \
+		$(if $(filter 1.0,$(compat_version)),"supported_devices":[$(call metadata_devices,$(SUPPORTED_DEVICES))]$(comma)) \
+		"version": { \
+			"release": "$(call json_quote,$(VERSION_NUMBER))", \
+			"date": "$(shell TZ='Asia/Chongqing' date '+%Y%m%d%H%M%S')", \
+			"dist": "$(call json_quote,$(VERSION_DIST))", \
+			"version": "$(call json_quote,$(VERSION_NUMBER))", \
+			"revision": "$(call json_quote,$(REVISION))", \
+			"target": "$(call json_quote,$(TARGETID))", \
+			"board": "$(call json_quote,$(if $(BOARD_NAME),$(BOARD_NAME),$(DEVICE_NAME)))" \
+		} \
+	}'
+
+define Build/append-gl-metadata
+	$(if $(SUPPORTED_DEVICES),-echo $(call metadata_gl_json,$(SUPPORTED_DEVICES)) | fwtool -I - $@)
+	sha256sum "$@" | cut -d" " -f1 > "$@.sha256sum"
+	[ ! -s "$(BUILD_KEY)" -o ! -s "$(BUILD_KEY).ucert" -o ! -s "$@" ] || { \
+		cp "$(BUILD_KEY).ucert" "$@.ucert" ;\
+		usign -S -m "$@" -s "$(BUILD_KEY)" -x "$@.sig" ;\
+		ucert -A -c "$@.ucert" -x "$@.sig" ;\
+		fwtool -S "$@.ucert" "$@" ;\
+	}
+endef
+
 define Build/append-rootfs
 	dd if=$(IMAGE_ROOTFS) >> $@
 endef
@@ -391,8 +422,8 @@ define Build/fit
 		$(if $(DEVICE_DTS_OVERLAY),$(foreach dtso,$(DEVICE_DTS_OVERLAY), -O $(dtso):$(KERNEL_BUILD_DIR)/image-$(dtso).dtbo)) \
 		-c $(if $(DEVICE_DTS_CONFIG),$(DEVICE_DTS_CONFIG),"config-1") \
 		-A $(LINUX_KARCH) -v $(LINUX_VERSION), gen-cpio$(if $(TARGET_PER_DEVICE_ROOTFS),.$(ROOTFS_ID/$(DEVICE_NAME))))
-	PATH=$(LINUX_DIR)/scripts/dtc:$(PATH) mkimage $(if $(findstring external,$(word 3,$(1))),\
-		-E -B 0x1000 $(if $(findstring static,$(word 3,$(1))),-p 0x1000)) -f $@.its $@.new
+	$(call locked,PATH=$(LINUX_DIR)/scripts/dtc:$(PATH) mkimage $(if $(findstring external,$(word 3,$(1))),\
+		-E -B 0x1000 $(if $(findstring static,$(word 3,$(1))),-p 0x1000)) -f $@.its $@.new)
 	@mv $@.new $@
 endef
 
@@ -438,13 +469,14 @@ endef
 
 define Build/jffs2
 	rm -rf $(KDIR_TMP)/$(DEVICE_NAME)/jffs2 && \
-		mkdir -p $(KDIR_TMP)/$(DEVICE_NAME)/jffs2/$$(dirname $(1)) && \
-		cp $@ $(KDIR_TMP)/$(DEVICE_NAME)/jffs2/$(1) && \
+		mkdir -p $(KDIR_TMP)/$(DEVICE_NAME)/jffs2/$$(dirname $(word 1,$(1))) && \
+		cp $@ $(KDIR_TMP)/$(DEVICE_NAME)/jffs2/$(word 1,$(1)) && \
 		$(STAGING_DIR_HOST)/bin/mkfs.jffs2 --pad \
 			$(if $(CONFIG_BIG_ENDIAN),--big-endian,--little-endian) \
 			--squash-uids -v -e $(patsubst %k,%KiB,$(BLOCKSIZE)) \
 			-o $@.new \
 			-d $(KDIR_TMP)/$(DEVICE_NAME)/jffs2 \
+			$(wordlist 2,$(words $(1)),$(1)) \
 			2>&1 1>/dev/null | awk '/^.+$$$$/' && \
 		$(STAGING_DIR_HOST)/bin/padjffs2 $@.new -J $(patsubst %k,,$(BLOCKSIZE))
 	-rm -rf $(KDIR_TMP)/$(DEVICE_NAME)/jffs2/
@@ -624,6 +656,26 @@ define Build/sysupgrade-tar
 		--kernel $(call param_get_default,kernel,$(1),$(IMAGE_KERNEL)) \
 		--rootfs $(call param_get_default,rootfs,$(1),$(IMAGE_ROOTFS)) \
 		$@
+endef
+
+define Build/tplink-mkimage-ubi
+	$(TOPDIR)/scripts/tplink-mkimage-ubi.py \
+		--create \
+		--device-name "$(TPLINK_DEVICE)" \
+		--device-ver "$(TPLINK_VERSION)" \
+		--special-ids "$(TPLINK_IDS)" \
+		--version "$(TPLINK_FWVER)" \
+		--rootfs "$@" \
+		"$(@).new"
+	@mv "$(@).new" "$@"
+endef
+
+define Build/tplink-image-2022
+	$(TOPDIR)/scripts/tplink-mkimage-2022.py  \
+		--create $@.new \
+		--rootfs $@ \
+		--support "$(TPLINK_SUPPORT_STRING)"
+	@mv $@.new $@
 endef
 
 define Build/tplink-safeloader
